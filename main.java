@@ -97,8 +97,8 @@ public class Main {
         // Convert queue to array for indexed access
         String[] elements = queue.toArray(new String[0]);
         boolean[] used = new boolean[elements.length];
-        int[] totalCount = new int[1]; // Using array to maintain reference inside recursion
-
+        int[] totalCount = new int[1];
+        
         System.out.println("\n--- All Permutations ---");
         permuteHelper(elements, used, new ArrayList<>(), r, totalCount);
         System.out.println("Total number of permutations (P): " + totalCount[0]);
@@ -170,7 +170,7 @@ public class Main {
             
             current.add(elements[i]);
             combineHelper(elements, i + 1, current, r, totalCount);
-            current.remove(current.size() - 1); // Backtrack
+            current.remove(current.size() - 1);
         }
     }
 }
